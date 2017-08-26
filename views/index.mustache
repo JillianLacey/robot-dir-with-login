@@ -6,31 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User Directory</title>
-     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
     <h1>User Directory</h1>
-  
+
     <nav class="main-nav">
-        <a href="/employed">Currently Employed</a>
-        <a href="/unemployed">Looking For Work</a>
+        <a href="/employment/employed">Currently Employed</a>
+        <a href="/employment/unemployed">Looking For Work</a>
         <a href="/">All Robots</a>
+        <a href="/auth/login">Login</a>
+        <a href="/auth/signup">Signup</a>
     </nav>
-<br>
+    <br>
     <div class="containerParent">
         <div class="container">
             {{#users}}
             <div class="info">
                 <p><img src="{{avatar}}"></p>
-                <p><a href="/profile/{{_id}}">{{name}}</a></p> 
-                {{#job}} <p class="jobInfo">{{job}}, {{company}}</p>{{/job}} {{^job}}
+                <p><a href="/profile/{{_id}}">{{name}}</a></p>
+                {{#job}}
+                <p class="jobInfo">{{job}}, {{company}}</p>{{/job}} {{^job}}
                 <p style="color: #c87a74">Available for hire</p>{{/job}}
             </div>
             {{/users}}
         </div>
     </div>
-    
+
 </body>
 
 </html>

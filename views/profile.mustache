@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{user.name}}'s Profile</title>
-     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
-
-
     <div class="wrapper">
-        {{#user}}
+        {{#users}}
         <div class="profile-container">
             <div>
                 <img class="avatar" src="{{avatar}}">
@@ -33,9 +31,10 @@
                 <p><strong>Education:</strong> {{university}}</p>
                 {{/university}}{{^university}} {{/university}}
                 <p><strong>Skills:</strong> {{skills}}</p>
+
                 <a href="/">Return To Directory</a>
             </div>
-            {{/user}}
+            {{/users}}
         </div>
 
     </div>

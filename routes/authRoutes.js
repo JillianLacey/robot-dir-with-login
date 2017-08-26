@@ -1,6 +1,6 @@
 const express = require("express");
 const authRoutes = express.Router();
-const User = require("../models/User");
+const Robot = require("../models/Robot");
 const bcrypt = require("bcryptjs");
 
 authRoutes.get("/signup", (req, res) => {
@@ -29,7 +29,7 @@ authRoutes.post("/login", (req, res) => {
     let reqUsername = req.body.username;
     let reqPassword = req.body.password;
 
-    User.findOne({ username: reqUsername }).then(function (foundUser) {
+    Robot.findOne({ username: reqUsername }).then(function (foundUser) {
         console.log("foundUser: ", foundUser);
         if (!foundUser) {
             return res.render("login", { errors: ["No user found."] });
