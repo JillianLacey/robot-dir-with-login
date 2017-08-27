@@ -2,10 +2,18 @@ const express = require("express");
 userRoutes = express.Router();
 
 userRoutes.get("/profile", (req, res) => {
-    res.render("profile", { user: req.session.user });
+  res.render("profile", { users: req.session.user });
 });
 
 module.exports = userRoutes;
+
+
+
+
+
+
+
+
 
 
 //Here is where you add the routes to Update a page

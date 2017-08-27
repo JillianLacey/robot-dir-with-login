@@ -4,30 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up</title>
+    <title>Sign Up - Robot Directory</title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 <div class = "wrapper-signup">
-    <h1>Sign up!</h1>
-    <div class="signup-style">
-    <form action="/auth/signup" method="POST">
-        <label>Name</label><input type="text" name="name" placeholder="Name" required><br>
-        <label>Username </label><input type="text" name="username" placeholder="Userame" required><br>
-        <label>Phone </label><input type="text" name="phone" placeholder="x-(xxx)xxx-xxxx" required><br>
-        <label>Email </label><input type="email" name="email" placeholder="your@email.com" required><br>
-        <label>Password </label><input type="password" name="password" placeholder="" required><br><br>
-        <label>City</label><input type="text" name="address.city" placeholder="city"><br><br>
-        <label>Country</label><input type="text" name="address.country" placeholder="country"><br><br>
-        <label>Job - Leave blank if available for hire</label><input type="text" name="job" placeholder="Job"><br>
-        <label>Company - Leave blank if available for hire</label><input type="text" name="company" placeholder="Company"><br>
-        <label>University</label><input type="text" name="university" placeholder="University"><br>
-        <label>Skills</label><br>
-        <input type="text" name="skills" placeholder="Skill 1"><br>
-        <input type="text" name="skills" placeholder="Skill 2"><br>
-        <input type="text" name="skills" placeholder="Skill 3"><br>
+    <div class="form">
+    <h1 class="signup-hd">Robot Directory Sign-up</h1>
+    <form class ="login-form" action="/auth/signup" method="POST">
+        <label></label><input type="text" name="name" placeholder="Name" autocomplete="off" required>
+        <label></label><input type="email" name="email" placeholder="Email@email.com" autocomplete="off" required>
+        <label></label><input type="text" name="username" placeholder="Userame" autocomplete="off" required>
+        <label></label><input type="password" name="password" placeholder="Password" autocomplete="off" required>
+        <label></label><input type="text" name="address.city" placeholder="City" autocomplete="off">
+        <label></label><input type="text" name="address.country" placeholder="Country">
+        <label></label><input type="text" name="phone" placeholder="x-(xxx)xxx-xxxx" autocomplete="off" required>
+        <label></label><input type="text" name="university" placeholder="University" autocomplete="off">
+        <label></label><input type="text" name="job" placeholder="Job - Leave Blank if None" autocomplete="off">
+        <label></label><input type="text" name="company" placeholder="Company - Leave Blank if None" autocomplete="off">
+        <label></label>
+        <input type="text" name="skills" placeholder="Skill 1">
+        <input type="text" name="skills" placeholder="Skill 2">
+        <input type="text" name="skills" placeholder="Skill 3">
+
 
         <button type="Submit">Sign Up!</button>
+
     </form>
     </div>
 </div>

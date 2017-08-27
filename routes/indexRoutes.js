@@ -8,7 +8,7 @@ indexRoutes.get("/", (req, res) => {
             res.status(500).send(err);
         }
         console.log(foundRobots);
-        res.render("index", { users: foundRobots });
+        res.render("index", { users: foundRobots });//sets what the first page is
     });
 });
 
