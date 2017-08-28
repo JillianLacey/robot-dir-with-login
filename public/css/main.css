@@ -27,6 +27,7 @@ body {
     width: 70%;
     margin: 0 10px;
     background-color: white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
 }
 
 .info {
@@ -46,7 +47,7 @@ a {
 }
 
 a:hover {
-    color: purple;
+    color: #43A047;
 }
 
 .jobInfo {
@@ -57,11 +58,13 @@ a:hover {
 .main-nav {
     padding: 20px 0;
     text-align: center;
-    background-color: #333333;
+    background-color: #e6e6e6;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
 }
 
 nav a:link {
     padding: 0 10px;
+    font-size: 1rem;
 }
 
 .profile-container {
@@ -81,7 +84,11 @@ nav a:link {
 .avatar {
     border-radius: 50%;
     border: 1px solid grey;
-    margin: 40px;
+    margin: 30px 10px;
+}
+
+.profile {
+    margin: 43px 42px;
 }
 
 
@@ -102,7 +109,7 @@ nav a:link {
     margin: 40px;
     padding: 30px 50px;
     text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
 }
 
 .form input {
@@ -119,8 +126,8 @@ nav a:link {
 .form button {
     text-transform: uppercase;
     outline: 0;
-    background: #4CAF50;
-    width: 60%;
+    background: #5f93d1;
+    width: 30%;
     border: 0;
     padding: 15px;
     color: #FFFFFF;
@@ -128,7 +135,7 @@ nav a:link {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-    margin-top: 20px;
+    margin: 20px 55px 0;
 }
 
 .form button:hover, .form button:active, .form button:focus {
@@ -142,6 +149,103 @@ nav a:link {
 }
 
 .form .message a {
-    color: #4CAF50;
+    color: #5f93d1;
     text-decoration: none;
 }
+
+.form a {
+    font-size: 1rem;
+}
+
+.update-prof {
+    width: 100%;
+    margin: 0;
+    z-index: -1;
+    padding: 43px 0;
+}
+
+
+/*accordion*/
+
+
+/* 
+.tab {
+    position: relative;
+    margin-bottom: 41px;
+    width: 100%;
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+}
+
+.accordion {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.acrdn-txt {
+    position: relative;
+    display: block;
+    padding: 0 0 0 1em;
+    background: #0D8194;
+    font-weight: bold;
+    line-height: 3.4;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.tab-content {
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(13, 129, 148, 0.51);
+    -webkit-transition: max-height .35s;
+    -o-transition: max-height .35s;
+    transition: max-height .35s;
+}
+
+.tab-content p {
+    margin: 1em;
+}
+
+.accordion:checked ~ .tab-content {
+    max-height: 50em;
+}
+
+input {
+    outline: 0;
+    background: #f2f2f2;
+    border: 0;
+    margin: 0 0 8px;
+    padding: 5px;
+}
+
+form {
+    margin: 20px 0;
+}
+
+button {
+    text-transform: uppercase;
+    outline: 0;
+    background: rgb(120, 59, 84);
+    border-radius: 5px;
+    border: 0;
+    padding: 9px 18px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+select {
+    outline: 0;
+    background: rgb(120, 59, 84);
+    border: 0;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+} */

@@ -5,6 +5,10 @@ userRoutes.get("/profile", (req, res) => {
   res.render("profile", { users: req.session.user });
 });
 
+
+
+
+
 module.exports = userRoutes;
 
 

@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <h1>Sign in</h1>
-    <div>
+   
+    <div class="wrapper-signup">
+    <div class="form">
+     <h1>Log in</h1>
     <form action="/auth/login" method="POST">
         {{#errors}}
             <h4>{{.}}</h4>
         {{/errors}}
-        <label for="">Username</label><input type="text" name="username" placeholder="Username" required><br>
-        <label for="">Password</label><input type="password" name="password" placeholder="password1234" required><br><br>
-        <button type="Submit">Submit</button>
+        <label for=""></label><input type="text" name="username" placeholder="Username" required><br>
+        <label for=""></label><input type="password" name="password" placeholder="password1234" required><br><br>
+        <button class="login-btn" type="Submit">Submit</button>
     </form>
     <br>
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
      <a href="/auth/signup">Don't have an account? Sign up</a>
      </div>
-
+    </div>
 </body>
 </html>

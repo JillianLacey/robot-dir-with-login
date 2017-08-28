@@ -10,35 +10,80 @@
 </head>
 
 <body>
+    {{!--
+    <nav class="main-nav">
+        <a href="/">Return To Directory </a>
+        <a href="/auth/login">Log out</a>
+        <!--Logout Not Working Yet-->
+        <a href="#">Update Profile</a>
+    </nav> --}}
+
+
+
+
+
     <div class="wrapper">
-        {{#users}}
-        <div class="profile-container">
-            <div>
-                <img class="avatar" src="{{avatar}}">
+        <div class="tab">
+            <nav class="main-nav">
+                <a href="/">Return To Directory </a>
+                <a href="/auth/login">Log out</a>
+                <input class="accordion" id="tab-one" type="checkbox" name="tabs">
+                <label class="acrdn-txt" for="tab-one">Update Profile +</label>
+            </nav>
+            <div class="tab-content">
+                <div class="form update-prof">
+                    <form class="login-form" action="/auth/signup" method="POST">
+                        <label></label><input type="text" name="name" placeholder="Name" autocomplete="off" required>
+                        <label></label><input type="email" name="email" placeholder="Email@email.com" autocomplete="off"
+                            required>
+                        <label></label><input type="text" name="username" placeholder="Userame" autocomplete="off" required>
+                        <label></label><input type="password" name="password" placeholder="Password" autocomplete="off" required>
+                        <label></label><input type="text" name="address.city" placeholder="City" autocomplete="off">
+                        <label></label><input type="text" name="address.country" placeholder="Country">
+                        <label></label><input type="text" name="phone" placeholder="x-(xxx)xxx-xxxx" autocomplete="off" required>
+                        <label></label><input type="text" name="university" placeholder="University" autocomplete="off">
+                        <label></label><input type="text" name="job" placeholder="Job - Leave Blank if None" autocomplete="off">
+                        <label></label><input type="text" name="company" placeholder="Company - Leave Blank if None" autocomplete="off">
+                        <label></label>
+                        <input type="text" name="skills" placeholder="Skill 1">
+                        <input type="text" name="skills" placeholder="Skill 2">
+                        <input type="text" name="skills" placeholder="Skill 3"><br>
+                        <button type="Submit">Update Profile</button>
+                    </form>
+                </div>
             </div>
-            <div class="text-content">
-                <p class="profile-name">{{name}}</p>
 
-                {{#address.city}}
-                <p>{{address.city}}, {{address.country}} | {{#job}} {{job}}, {{company}}
-                </p>{{/job}} {{^job}}
-                <span style="color: #c87a74">Available for hire</span> {{/job}} {{/address.city}} {{^address.city}} {{address.country}}
-                | {{#job}} {{job}}, {{company}}</p>{{/job}} {{^job}}<span style="color: #c87a74">Available for hire</span>{{/job}}
-                {{/address.city}}
-                <p> {{email}} | {{phone}}</p>
-                {{#university}}
-                <p><strong>Education:</strong> {{university}}</p>
-                {{/university}}{{^university}} {{/university}}
-
-
-                <p><strong>Skills:</strong> {{#skills}}{{.}},&nbsp;{{/skills}}</p>
-                <a href="/">Update Profile</a>
-                <a href="/">Return To Directory</a>
-            </div>
-            {{/users}}
         </div>
 
-    </div>
+
+        <div class="wrapper">
+            {{#users}}
+            <div class="profile-container">
+                <div>
+                    {{#avatar}}
+                    <img class="avatar profile" src="{{avatar}}">{{/avatar}} {{^avatar}} <img class="avatar profile" src="/img/noPhoto.png">{{/avatar}}
+                </div>
+                <div class="text-content">
+                    <p class="profile-name">{{name}}</p>
+
+                    {{#address.city}}
+                    <p>{{address.city}}, {{address.country}} | {{#job}} {{job}}, {{company}}
+                    </p>{{/job}} {{^job}}
+                    <span style="color: #c87a74">Available for hire</span> {{/job}} {{/address.city}} {{^address.city}} {{address.country}}
+                    | {{#job}} {{job}}, {{company}}</p>{{/job}} {{^job}}<span style="color: #c87a74">Available for hire</span>{{/job}}
+                    {{/address.city}}
+                    <p> {{email}} | {{phone}}</p>
+                    {{#university}}
+                    <p><strong>Education:</strong> {{university}}</p>
+                    {{/university}}{{^university}} {{/university}}
+
+
+                    <p><strong>Skills:</strong> {{#skills}}{{.}},&nbsp;{{/skills}}</p>
+                </div>
+                {{/users}}
+            </div>
+        </div>
+
 
 
 </body>
