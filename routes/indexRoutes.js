@@ -4,6 +4,7 @@ const Robot = require("../models/Robot");
 
 indexRoutes.get("/", (req, res) => {
     Robot.find().then(foundRobots => {
+        console.log(foundRobots);
         if (!foundRobots) {
             res.status(500).send(err);
         }

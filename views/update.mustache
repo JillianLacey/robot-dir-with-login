@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{users.name}}'s Profile</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+
+    <nav class="main-nav">
+        <a href="/user/profile">Return to profile </a>
+        <a href="/update">Update Profile</a>
+        <a href="/">All Robots</a>
+    </nav>
+    <div class="wrapper">
+
+
+        {{#users}}
+
+        <div class="tab">
+            <h1>This is the update page!</h1>
+            <div>
+                <form action="/user/updateprofile/{{_id}}" method="POST">
+
+                    <label>Name</label>
+                    <input type="text" name="name" value={{name}} autocomplete="off">
+                    <label></label><input type="email" name="email" value={{email}} autocomplete="off" required>
+                    <label></label><input type="text" name="username" value={{username}} autocomplete="off" required>
+                    <input type="text" name="address.city" placeholder="City" value={{address.city}} autocomplete="off">
+                    <input type="text" name="address.country" placeholder="Country" value={{address.country}}>
+                    <input type="text" name="phone" value={{phone}} autocomplete="off" required>
+                    <input type="text" name="university" autocomplete="off">
+                    <input type="text" name="job" placeholder="Job - Leave Blank if None" autocomplete="off">
+                    <input type="text" name="company" placeholder="Company - Leave Blank if None" autocomplete="off">
+                    <input type="text" name="skills" placeholder="Skill 1">
+                    <input type="text" name="skills" placeholder="Skill 2">
+                    <input type="text" name="skills" placeholder="Skill 3">
+
+                    <button type="Submit">Update Profile</button>
+                </form>
+
+                <form action="/user/deleteUser/{{_id}}" method="GET">
+                    <button type="Submit">Delete Profile</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="prof-parent">
+
+        <div class="prof-ctr">
+            <div>
+                {{#avatar}}
+                <img class="avatar prof-img" src="{{avatar}}">{{/avatar}} {{^avatar}} <img class="avatar prof-img" src="/img/noPhoto.png">{{/avatar}}
+            </div>
+            <div class="text-content">
+                <p class="prof-name">{{name}}</p>
+
+                {{#address.city}}
+                <p>{{address.city}}, {{address.country}} | {{#job}} {{job}}, {{company}}
+                </p>{{/job}} {{^job}}
+                <span style="color: #c87a74">Available for hire</span> {{/job}} {{/address.city}} {{^address.city}} {{address.country}}
+                | {{#job}} {{job}}, {{company}}</p>{{/job}} {{^job}}<span style="color: #c87a74">Available for hire</span>{{/job}}
+                {{/address.city}}
+                <p> {{email}} | {{phone}}</p>
+                {{#university}}
+                <p><strong>Education:</strong> {{university}}</p>
+                {{/university}}{{^university}} {{/university}}
+
+
+                <p><strong>Skills:</strong> {{#skills}}{{.}},&nbsp;{{/skills}}</p>
+            </div>
+            {{/users}}
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

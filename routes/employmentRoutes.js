@@ -3,7 +3,7 @@ const employmentRoutes = express.Router();
 const Robot = require("../models/Robot");
 
 employmentRoutes.get("/employed", (req, res) => {
-    Robot.find({ job: { $ne: null } }).then(foundRobot => {
+    Robot.find().where('job').ne(null).then(foundRobot => {
         res.render("index", { users: foundRobot });
     });
 });

@@ -10,71 +10,41 @@
 </head>
 
 <body>
-    {{!--
+
     <nav class="main-nav">
-        <a href="/">Return To Directory </a>
-        <a href="/auth/login">Log out</a>
-        <!--Logout Not Working Yet-->
-        <a href="#">Update Profile</a>
-    </nav> --}}
+        <a href="/">All Robots</a>
+        <a href="/user/update">Update Profile</a>
+    </nav>
 
     <div class="wrapper">
+        <div class="prof-detail">
+            {{#users}}
+            <div class="prof-ctr">
+                <div>
+                    {{#avatar}}
+                    <img class="avatar prof-img " src="{{avatar}} ">{{/avatar}} {{^avatar}} <img class="avatar prof-img"
+                        src="/img/noPhoto.png">{{/avatar}}
+                </div>
+                <div class="text-content">
+                    <p class="prof-name">{{name}}</p>
 
-        <div class="tab">
-            <input class="accordion" id="tab-one" type="checkbox" name="tabs">
-            <label class="acrdn-txt" for="tab-one">Update Profile +</label> {{!-- <label class="acrdn-txt"><a href="/">Return To Directory </a></label>--}}
-            {{!-- If user is logged in they can update profile. If not show login and home link --}}
+                    {{#address.city}}
+                    <p>{{address.city}}, {{address.country}} | {{#job}} {{job}}, {{company}}
+                    </p>{{/job}} {{^job}}
+                    <span style="color: #c87a74 ">Available for hire</span> {{/job}} {{/address.city}} {{^address.city}}
+                    {{address.country}} | {{#job}} {{job}}, {{company}}</p>{{/job}} {{^job}}<span style="color: #c87a74 ">Available for hire</span>{{/job}}
+                    {{/address.city}}
+                    <p> {{email}} | {{phone}}</p>
+                    {{#university}}
+                    <p><strong>Education:</strong> {{university}}</p>
+                    {{/university}}{{^university}} {{/university}}
 
-            <div class="tab-content prof-form-ctr">
-                <form class="prof-form" action="/auth/signup" method="POST">
-                    <label></label><input type="text" name="name" placeholder="Name" autocomplete="off" required>
-                    <label></label><input type="email" name="email" placeholder="Email@email.com" autocomplete="off" required>
-                    <label></label><input type="text" name="username" placeholder="Userame" autocomplete="off" required>
-                    <label></label><input type="password" name="password" placeholder="Password" autocomplete="off" required>
-                    <label></label><input type="text" name="address.city" placeholder="City" autocomplete="off">
-                    <label></label><input type="text" name="address.country" placeholder="Country">
-                    <label></label><input type="text" name="phone" placeholder="x-(xxx)xxx-xxxx" autocomplete="off" required>
-                    <label></label><input type="text" name="university" placeholder="University" autocomplete="off">
-                    <label></label><input type="text" name="job" placeholder="Job - Leave Blank if None" autocomplete="off">
-                    <label></label><input type="text" name="company" placeholder="Company - Leave Blank if None" autocomplete="off">
-                    <label></label>
-                    <input type="text" name="skills" placeholder="Skill 1">
-                    <input type="text" name="skills" placeholder="Skill 2">
-                    <input type="text" name="skills" placeholder="Skill 3"><br>
-                    <button type="Submit">Update Profile</button>
-                </form>
+
+                    <p><strong>Skills:</strong> {{#skills}}{{.}},&nbsp;{{/skills}}</p>
+                </div>
+                {{/users}}
             </div>
         </div>
-
-    </div>
-
-    <div class="prof-parent">
-        {{#users}}
-        <div class="prof-ctr">
-            <div>
-                {{#avatar}}
-                <img class="avatar prof-img" src="{{avatar}}">{{/avatar}} {{^avatar}} <img class="avatar prof-img" src="/img/noPhoto.png">{{/avatar}}
-            </div>
-            <div class="text-content">
-                <p class="prof-name">{{name}}</p>
-
-                {{#address.city}}
-                <p>{{address.city}}, {{address.country}} | {{#job}} {{job}}, {{company}}
-                </p>{{/job}} {{^job}}
-                <span style="color: #c87a74">Available for hire</span> {{/job}} {{/address.city}} {{^address.city}} {{address.country}}
-                | {{#job}} {{job}}, {{company}}</p>{{/job}} {{^job}}<span style="color: #c87a74">Available for hire</span>{{/job}}
-                {{/address.city}}
-                <p> {{email}} | {{phone}}</p>
-                {{#university}}
-                <p><strong>Education:</strong> {{university}}</p>
-                {{/university}}{{^university}} {{/university}}
-
-
-                <p><strong>Skills:</strong> {{#skills}}{{.}},&nbsp;{{/skills}}</p>
-            </div>
-            {{/users}}
-        </div>
-    </div>
 
 
 

@@ -12,6 +12,11 @@ authRoutes.get("/signup", (req, res) => {
 
 authRoutes.post("/signup", (req, res) => {
     let newRobot = new Robot(req.body);//schema name
+
+    if (!newRobot.job) {
+        newRobot.job = null;
+    }
+
     let salt = bcrypt.genSaltSync(10);
     newRobot.password = bcrypt.hashSync(newRobot.password, salt);
     newRobot

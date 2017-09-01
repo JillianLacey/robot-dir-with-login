@@ -20,7 +20,10 @@ const robotSchema = new Schema({
         city: String,
         country: String
     },
-    job: String,
+    job: {
+        type: String,
+        default: null
+    },
     company: String,
     email: {
         type: String,

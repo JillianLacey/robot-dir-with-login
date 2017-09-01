@@ -14,13 +14,9 @@
     <nav class="main-nav">
         <a href="/employment/employed">Currently Employed</a>
         <a href="/employment/unemployed">Looking For Work</a>
-        <a href="/">All Robots</a> 
-        <!--need to have Profile link this go to whoever is logged in-->
-       <a href="/user/profile">View Profile</a> 
-        <!--if logged in show the logout btn-->
-        <a href="/auth/login">Log out</a> 
-        <a href="/auth/login">Login</a> 
-
+        <a href="/">All Robots</a>
+        <a href="/user/profile">View Profile</a>
+        <a href="/auth/login">Login</a>
         <a href="/auth/signup">Signup</a>
     </nav>
     <h1 class="index-hd">Robot User Directory</h1>
@@ -29,9 +25,9 @@
         <div class="container">
             {{#users}}
             <div class="info">
-            {{#avatar}}
-            <img class="avatar" src="{{avatar}}">{{/avatar}} {{^avatar}} <img class="avatar" src="/img/noPhoto.png">{{/avatar}}
-   
+                {{#avatar}}
+                <img class="avatar" src="{{avatar}}">{{/avatar}} {{^avatar}} <img class="avatar" src="/img/noPhoto.png">{{/avatar}}
+
                 <p><a href="/profile/{{_id}}">{{name}}</a></p>
                 {{#job}}
                 <p class="jobInfo">{{job}}, {{company}}</p>{{/job}} {{^job}}
