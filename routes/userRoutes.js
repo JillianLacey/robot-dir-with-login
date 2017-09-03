@@ -7,7 +7,6 @@ userRoutes.get("/profile", (req, res) => {
 });
 
 
-
 userRoutes.get("/update", (req, res) => {
   res.render("update", { users: req.session.user });
 });
