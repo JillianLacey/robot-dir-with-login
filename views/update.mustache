@@ -23,15 +23,15 @@
             <div class="update-section">
                 <h1>Update Profile</h1>
                 <form action="/user/updateprofile/{{_id}}" method="POST">
-                    <input type="text" name="name" value={{name}} placeholder="Name" autocomplete="off">
-                    <input type="email" name="email" value={{email}} placeholder="Email" autocomplete="off" required>
-                    <input type="text" name="username" value={{username}} placeholder="Username" autocomplete="off" required>
-                    <input type="text" name="address.city" placeholder="City" value={{address.city}} autocomplete="off">
-                    <input type="text" name="address.country" placeholder="Country" value={{address.country}}>
-                    <input type="text" name="phone" value={{phone}} placeholder="x-(xxx)xxx-xxxx" autocomplete="off" required>
-                    <input type="text" name="university" placeholder="University" autocomplete="off">
-                    <input type="text" name="job" placeholder="Job" autocomplete="off">
-                    <input type="text" name="company" placeholder="Company" autocomplete="off"> {{#skills}}
+                    <input type="text" name="name" value="{{name}}" placeholder="Name" autocomplete="off">
+                    <input type="email" name="email" value="{{email}}" placeholder="Email" autocomplete="off" required>
+                    <input type="text" name="username" value="{{username}}" placeholder="Username" autocomplete="off" required>
+                    <input type="text" name="address.city" placeholder="City" value="{{address.city}}" autocomplete="off">
+                    <input type="text" name="address.country" placeholder="Country" value="{{address.country}}">
+                    <input type="text" name="phone" value="{{phone}}" placeholder="x-(xxx)xxx-xxxx" autocomplete="off" required>
+                    <input type="text" name="university" value="{{university}}" placeholder="University" autocomplete="off">
+                    <input type="text" name="job" value="{{job}}" placeholder="Job" autocomplete="off">
+                    <input type="text" name="company" value="{{company}}" placeholder="Company" autocomplete="off"> {{#skills}}
                     <input type="text" name="skills" placeholder="skills" value={{.}}> {{/skills}}
                     <button class="update-btn" type="Submit">Update Profile</button>
                 </form>
